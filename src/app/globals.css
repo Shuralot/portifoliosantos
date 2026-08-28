@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+:root {
+  /* Warm Sand/Cream Light Mode */
+  --background: #faf8f5;
+  --foreground: #1c1917;
+  --muted: #78716c;
+  --accent: #5b21b6; /* Sophisticated Royal Purple */
+  --accent-muted: #f5f3ff; /* Muted Lavender */
+  --border: #e7e5e4;
+  --card-bg: #ffffff;
+  --nav-bg: rgba(250, 248, 245, 0.85);
+  
+  --font-geist-sans: var(--font-geist-sans);
+  --font-geist-mono: var(--font-geist-mono);
+}
+
+.dark {
+  /* Deep Warm Stone/Charcoal Dark Mode */
+  --background: #121110;
+  --foreground: #f5f5f4;
+  --muted: #a8a29e;
+  --accent: #a78bfa; /* Bright Amethyst Violet */
+  --accent-muted: #211830; /* Deep Muted Purple-Charcoal */
+  --border: #292524;
+  --card-bg: #1c1917;
+  --nav-bg: rgba(18, 17, 16, 0.85);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-muted: var(--accent-muted);
+  --color-border: var(--border);
+  --color-card-bg: var(--card-bg);
+  --color-nav-bg: var(--nav-bg);
+  
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
+}
+
+html {
+  font-size: 115%; /* Increases all typography and spacing proportionally by 15% */
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.4s ease, color 0.3s ease;
+}
+
+/* Custom selection */
+::selection {
+  background-color: var(--accent-muted);
+  color: var(--accent);
+}
+
+.dark ::selection {
+  background-color: var(--accent-muted);
+  color: var(--accent);
+}
+
+/* Clean micro-scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
+
+/* Fluid helper classes */
+.blur-load {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Remove default focus outlines for mouse users while retaining for keyboard accessibility */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
