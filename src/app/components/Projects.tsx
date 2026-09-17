@@ -77,8 +77,9 @@ export default function Projects() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {projectsData.map((project) => (
             <motion.div
-              layoutId={`card-${project.id}`}
               key={project.id}
+              whileHover={{ y: -3 }}
+              transition={{ duration: 0.2 }}
               onClick={() => setSelectedProject(project)}
               className="bg-card-bg border border-border/80 hover:border-accent/30 rounded-2xl p-5 sm:p-6 cursor-pointer hover:shadow-md transition-all duration-300 flex flex-col justify-between group"
             >
@@ -126,16 +127,19 @@ export default function Projects() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
+                transition={{ duration: 0.2 }}
                 onClick={() => setSelectedProject(null)}
-                className="fixed inset-0 bg-black/45 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+                className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
               />
 
               {/* Card Container */}
               <div className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none">
                 <motion.div
-                  layoutId={`card-${selectedProject.id}`}
-                  className="w-full max-w-lg max-h-[90vh] overflow-y-auto bg-card-bg border border-border rounded-3xl p-5 sm:p-7 md:p-8 shadow-2xl pointer-events-auto relative flex flex-col justify-between scrollbar-none"
-                  transition={{ type: "spring", stiffness: 260, damping: 25 }}
+                  initial={{ opacity: 0, scale: 0.95, y: 15 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.95, y: 15 }}
+                  transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
+                  className="w-full max-w-lg max-h-[90vh] overflow-y-auto bg-card-bg border border-border rounded-3xl p-5 sm:p-7 md:p-8 shadow-2xl pointer-events-auto relative scrollbar-none"
                 >
                   {/* Close button */}
                   <button
@@ -146,97 +150,70 @@ export default function Projects() {
                     <X size={16} />
                   </button>
 
-                  <div>
-                    {/* Header */}
-                    <div className="flex items-start gap-4 mb-4 sm:mb-5 pr-8">
-                      <div className="p-2.5 sm:p-3 rounded-xl bg-accent-muted text-accent shrink-0 mt-0.5">
-                        {selectedProject.icon}
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <span className="text-[10px] font-bold uppercase tracking-widest text-accent block mb-1">
-                          {selectedProject.category}
-                        </span>
-                        <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground leading-tight">
-                          {selectedProject.title}
-                        </h3>
-                      </div>
+                  {/* Header */}
+                  <div className="flex items-start gap-4 mb-4 sm:mb-5 pr-8">
+                    <div className="p-2.5 sm:p-3 rounded-xl bg-accent-muted text-accent shrink-0 mt-0.5">
+                      {selectedProject.icon}
                     </div>
-
-                    {/* Quick Access Action Bar at TOP (Immediately visible without scrolling) */}
-                    {(selectedProject.github || selectedProject.link) && (
-                      <div className="flex flex-wrap items-center gap-2.5 mb-6 pb-5 border-b border-border/70">
-                        {selectedProject.github && (
-                          <a
-                            href={selectedProject.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex h-9 items-center gap-2 px-4 rounded-xl bg-foreground text-background hover:opacity-90 text-xs font-semibold shadow-sm transition-all cursor-pointer"
-                          >
-                            <GithubIcon size={14} />
-                            {t("projects.codeBtn")}
-                          </a>
-                        )}
-                        {selectedProject.link && (
-                          <a
-                            href={selectedProject.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex h-9 items-center gap-2 px-4 rounded-xl border border-border bg-card-bg hover:bg-foreground/[0.04] text-xs font-semibold text-foreground transition-colors cursor-pointer"
-                          >
-                            <ExternalLink size={14} />
-                            {t("projects.siteBtn")}
-                          </a>
-                        )}
-                      </div>
-                    )}
-
-                    {/* Detailed description */}
-                    <p className="text-xs sm:text-sm text-muted leading-relaxed font-normal mb-6 sm:mb-8 whitespace-pre-line">
-                      {selectedProject.description}
-                    </p>
-
-                    {/* Tags list with official logos */}
-                    <div className="mb-6 sm:mb-8">
-                      <h4 className="text-[10px] font-bold uppercase tracking-wider text-foreground opacity-60 mb-3">
-                        {t("projects.techHeader")}
-                      </h4>
-                      <div className="flex flex-wrap gap-2">
-                        {selectedProject.tags.map((tag, idx) => (
-                          <TechBadge key={idx} name={tag} size="md" />
-                        ))}
-                      </div>
+                    <div className="flex-1 min-w-0">
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-accent block mb-1">
+                        {selectedProject.category}
+                      </span>
+                      <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground leading-tight">
+                        {selectedProject.title}
+                      </h3>
                     </div>
                   </div>
 
-                  {/* Footer links */}
-                  <div className="flex items-center gap-3 border-t border-border pt-5 sm:pt-6 mt-auto">
-                    {selectedProject.github && (
-                      <a
-                        href={selectedProject.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1 flex h-10 items-center justify-center gap-2 rounded-xl border border-border hover:bg-foreground/[0.02] dark:hover:bg-foreground/[0.04] text-xs font-semibold text-foreground transition-colors cursor-pointer"
-                      >
-                        <GithubIcon size={13} />
-                        {t("projects.codeBtn")}
-                      </a>
-                    )}
-                    {selectedProject.link && (
-                      <a
-                        href={selectedProject.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1 flex h-10 items-center justify-center gap-2 rounded-xl bg-foreground text-background hover:opacity-90 text-xs font-semibold transition-opacity cursor-pointer"
-                      >
-                        <ExternalLink size={13} />
-                        {t("projects.siteBtn")}
-                      </a>
-                    )}
-                    {!selectedProject.github && !selectedProject.link && (
-                      <span className="flex-1 text-center text-[10px] font-semibold text-muted bg-foreground/[0.01] border border-border/40 py-2.5 rounded-xl cursor-default">
+                  {/* Quick Access Action Bar at TOP */}
+                  {(selectedProject.github || selectedProject.link) ? (
+                    <div className="flex flex-wrap items-center gap-2.5 mb-6 pb-5 border-b border-border/70">
+                      {selectedProject.github && (
+                        <a
+                          href={selectedProject.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex h-9 items-center gap-2 px-4 rounded-xl bg-foreground text-background hover:opacity-90 text-xs font-semibold shadow-sm transition-all cursor-pointer"
+                        >
+                          <GithubIcon size={14} />
+                          {t("projects.codeBtn")}
+                        </a>
+                      )}
+                      {selectedProject.link && (
+                        <a
+                          href={selectedProject.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex h-9 items-center gap-2 px-4 rounded-xl border border-border bg-card-bg hover:bg-foreground/[0.04] text-xs font-semibold text-foreground transition-colors cursor-pointer"
+                        >
+                          <ExternalLink size={14} />
+                          {t("projects.siteBtn")}
+                        </a>
+                      )}
+                    </div>
+                  ) : (
+                    <div className="flex items-center mb-6 pb-5 border-b border-border/70">
+                      <span className="text-[10px] font-semibold text-muted bg-foreground/[0.02] border border-border/50 px-3 py-1.5 rounded-lg cursor-default">
                         {t("projects.privateProject")}
                       </span>
-                    )}
+                    </div>
+                  )}
+
+                  {/* Detailed description */}
+                  <p className="text-xs sm:text-sm text-muted leading-relaxed font-normal mb-6 sm:mb-8 whitespace-pre-line">
+                    {selectedProject.description}
+                  </p>
+
+                  {/* Tags list with official logos */}
+                  <div>
+                    <h4 className="text-[10px] font-bold uppercase tracking-wider text-foreground opacity-60 mb-3">
+                      {t("projects.techHeader")}
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {selectedProject.tags.map((tag, idx) => (
+                        <TechBadge key={idx} name={tag} size="md" />
+                      ))}
+                    </div>
                   </div>
                 </motion.div>
               </div>
