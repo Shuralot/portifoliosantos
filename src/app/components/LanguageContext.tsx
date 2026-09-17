@@ -287,6 +287,15 @@ const translations: Record<Language, TranslationDictionary> = {
       closeLabel: "Fechar detalhes",
       list: [
         {
+          id: "batatoom",
+          title: "Batatoom! — Batata Quente de Palavras",
+          category: "Multiplayer Game / WebSockets",
+          summary: "Party game multiplayer em tempo real estilo Bomb Party, com vocabulário autêntico PT-BR de 400.000+ palavras, áudio procedural e suporte mobile/TV.",
+          description: "Party game multiplayer em tempo real inspirado no clássico Bomb Party (JKLM), projetado e lapidado especificamente para o Português do Brasil com dicionário rico de mais de 400.000 palavras (reconhece conjugações, plurais, nomes geográficos e digitação tolerante a acentos).\n\nA aplicação é 100% autônoma e centralizada: um único servidor Node.js com Express e Socket.IO gerencia salas, máquina de estados do jogo e o dicionário em memória com buscas O(1).\n\nDestaques da implementação:\n• Mecânica temática de batata quente animada com vapor, suor e pânico conforme o tempo acaba.\n• Configurações completas de sala: dificuldade dinâmica/calibrada (sem combinações impossíveis), turnos sequenciais ou aleatórios e temporizador secreto.\n• Interface arcade responsiva mobile-first com foco automático, vibração tátil (Haptic Feedback) e entrada rápida via QR Code.\n• Modo Telão/TV (📺) para projetar na sala enquanto amigos jogam pelo celular.\n• Áudio 100% procedural sintetizado em tempo real via Web Audio API (zero arquivos de áudio externos).",
+          tags: ["Node.js", "Express", "Socket.IO", "WebSockets", "Web Audio API", "JavaScript", "Real-time", "Mobile-First"],
+          github: "https://github.com/Shuralot/Batatoom"
+        },
+        {
           id: "odontovieira",
           title: "Website OdontoVieira",
           category: "Web Development / SEO",
@@ -509,6 +518,15 @@ const translations: Record<Language, TranslationDictionary> = {
       techHeader: "Technologies & Skills",
       closeLabel: "Close details",
       list: [
+        {
+          id: "batatoom",
+          title: "Batatoom! — Word Hot Potato",
+          category: "Multiplayer Game / WebSockets",
+          summary: "Real-time multiplayer party game inspired by Bomb Party, featuring an authentic 400,000+ PT-BR dictionary, procedural audio, and mobile/TV support.",
+          description: "Real-time multiplayer party game inspired by the classic Bomb Party (JKLM), crafted and calibrated specifically for Brazilian Portuguese with an authentic dictionary of over 400,000 words (supporting verb conjugations, plurals, geographic names, and accent-tolerant fuzzy input).\n\nThe application is 100% standalone and centralized: a single Node.js server with Express and Socket.IO manages rooms, game state machine, and in-memory O(1) dictionary lookups.\n\nKey Highlights:\n• Thematic hot potato visual mechanics with vapor, sweating, and panic animations as the clock ticks.\n• Comprehensive room settings: dynamic/calibrated difficulty (no impossible prompts), sequential or surprise random turns, and invisible secret timers.\n• Mobile-first arcade interface with automatic keyboard focus, haptic vibration feedback, and instant room entry via QR Code.\n• Big-screen TV Mode (📺) designed for projecting in the living room while friends play from their smartphones.\n• 100% procedural audio synthesized in real time using the Web Audio API (zero external audio files).",
+          tags: ["Node.js", "Express", "Socket.IO", "WebSockets", "Web Audio API", "JavaScript", "Real-time", "Mobile-First"],
+          github: "https://github.com/Shuralot/Batatoom"
+        },
         {
           id: "odontovieira",
           title: "OdontoVieira Website",

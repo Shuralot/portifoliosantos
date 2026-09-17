@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ExternalLink, X, Monitor, Cpu, MessageSquare, Layout, Bot } from "lucide-react";
+import { ExternalLink, X, Monitor, Cpu, MessageSquare, Layout, Bot, Bomb } from "lucide-react";
 import { GithubIcon } from "./Icons";
 import { useLanguage } from "./LanguageContext";
 
@@ -25,6 +25,7 @@ export default function Projects() {
   const rawProjects = t("projects.list") || [];
 
   const iconsMap: Record<string, React.ReactNode> = {
+    "batatoom": <Bomb className="text-accent" size={24} />,
     "odontovieira": <Monitor className="text-accent" size={24} />,
     "trackchat": <MessageSquare className="text-accent" size={24} />,
     "gerenciador-atividades": <Cpu className="text-accent" size={24} />,
@@ -201,7 +202,7 @@ export default function Projects() {
                         {t("projects.codeBtn")}
                       </a>
                     )}
-                    {selectedProject.link ? (
+                    {selectedProject.link && (
                       <a
                         href={selectedProject.link}
                         target="_blank"
@@ -211,7 +212,8 @@ export default function Projects() {
                         <ExternalLink size={13} />
                         {t("projects.siteBtn")}
                       </a>
-                    ) : (
+                    )}
+                    {!selectedProject.github && !selectedProject.link && (
                       <span className="flex-1 text-center text-[10px] font-semibold text-muted bg-foreground/[0.01] border border-border/40 py-2.5 rounded-xl cursor-default">
                         {t("projects.privateProject")}
                       </span>
