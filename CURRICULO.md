@@ -28,17 +28,37 @@ Essa intersecção me permite ir além das linhas de código: aplico escuta ativ
 *Janeiro de 2026 — Presente*
 * Desenvolvimento de soluções sob medida com foco em performance e SEO, entregando carregamento ágil e designs adaptáveis.
 * Criação de robôs de web scraping (extração de dados) para automação de processos comerciais.
-* Integração de gateways de pagamento e plataformas de e-commerce personalizadas.
-* **Caso de Destaque (Website OdontoVieira)**: Desenvolvido em Next.js com foco em SEO local de alto impacto e rastreamento avançado de conversão via Google Tag Manager (GTM), gerando aumento direto na aquisição de novos leads qualificados de pacientes.
-* **Caso de Destaque (Batatoom! - Party Game Multiplayer)**: Party game em tempo real com arquitetura orientada a eventos sobre WebSockets (Node.js, Express, Socket.IO). Motor léxico em memória de +403.000 palavras em O(1) (<1ms de consulta), áudio 100% procedural (Web Audio API - zero dependências de arquivos de áudio), suporte a Modo TV, digitação ao vivo (live typing) e conexão zero-config via túneis Cloudflare e QR Code.
+* Integração de gateways de pagamento, funis de conversão e plataformas personalizadas.
 
 ### **Desenvolvedor Full Stack & Implementador**
 *AI Atende* | Piedade, Jaboatão, PE (Presencial)
 *2025 — 2026*
 * Desenvolvimento de aplicações full stack em Javascript e TypeScript (JS/TSX) com foco em ferramentas de atendimento ao cliente integradas com IA.
-* Engenharia de prompts e design de interações humano-computador para fluxos automatizados inteligentes.
-* Gerenciamento de infraestrutura local e em nuvem: provisionamento e configuração de VPS e orquestração de microsserviços rodando em contêineres Docker.
-* Implementação e automação de funis no CRM Kommo (antigo AmoCRM), integrando canais de mensagens e melhorando em tempo real as métricas de resposta e triagem de clientes.
+* Engenharia de prompts e design de interações humano-computador para fluxos conversacionais inteligentes.
+* Gerenciamento de infraestrutura: provisionamento e configuração de VPS e orquestração de microsserviços rodando em contêineres Docker.
+* Implementação e automação de funis no CRM Kommo, integrando canais de mensagens e melhorando as métricas de resposta e triagem.
+
+---
+
+## Projetos em Destaque
+
+### **Batatoom! — Jogo Multiplayer em Tempo Real**
+* [github.com/Shuralot/Batatoom](https://github.com/Shuralot/Batatoom) | *Stack: Node.js, Express, Socket.IO, WebSockets, Web Audio API, Cloudflare Tunnels*
+* **Problema & Solução**: Party game multiplayer em tempo real de vocabulário e raciocínio ágil para web, smartphones e Modo TV/Telão.
+* **Engenharia & Decisões Técnicas**: Arquitetura orientada a eventos sobre WebSockets; motor léxico em memória de +403.000 palavras em O(1) (<1ms de validação com Sets/HashMaps e normalização Unicode NFD); áudio 100% procedural sintetizado via Web Audio API (0 KB de assets); máquina de estados autoritativa no servidor contra trapaças e streaming de live typing; túneis Cloudflare com QR Code dinâmico para conexão instantânea zero-config sem abrir portas.
+* **Impacto**: Sincronização multi-dispositivo fluida com latência imperceptível e sem necessidade de instalação.
+
+### **Website OdontoVieira — Plataforma Web & SEO Local**
+* [clinicaodontovieira.com.br](https://www.clinicaodontovieira.com.br) | *Stack: Next.js (App Router), React, Tailwind CSS, Google Tag Manager*
+* **Problema & Solução**: Plataforma web institucional e funil de captação de pacientes para clínica odontológica.
+* **Engenharia & Decisões Técnicas**: Desenvolvido em Next.js com foco em Core Web Vitals e SEO técnico local estruturado; instrumentação analítica completa com Google Tag Manager (GTM) para monitoramento de comportamento e otimização de taxa de conversão direta para o WhatsApp.
+* **Impacto**: Carregamento instantâneo, alcance orgânico na busca regional e aumento comprovado na aquisição de novos pacientes qualificados.
+
+### **Ragnar AI-vs-AI Testing Suite — Plataforma de Auditoria Adversarial**
+* [github.com/Shuralot/TrackTest](https://github.com/Shuralot/TrackTest) | *Stack: Next.js, TypeScript, PostgreSQL, Prisma, Socket.IO, Evolution API, Docker*
+* **Problema & Solução**: Plataforma para orquestrar e auditar testes de estresse e ataques adversariais entre modelos de IA via WhatsApp.
+* **Engenharia & Decisões Técnicas**: Backend e frontend unificados em Next.js com banco PostgreSQL e Prisma ORM; integração via Evolution API para simulação realista de usuários; streaming de logs e telemetria em tempo real com Socket.IO; relatórios automatizados de vulnerabilidade e consumo de tokens.
+* **Impacto**: Automação da esteira de auditoria de agentes inteligentes, identificando falhas de alinhamento e segurança antes da produção.
 
 ---
 

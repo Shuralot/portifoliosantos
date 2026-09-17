@@ -28,9 +28,7 @@ This intersection enables me to go beyond syntax: I apply clinical active listen
 *January 2026 — Present*
 * Developing customized web systems focusing on page speed, responsiveness, and clean code architectures.
 * Creating tailored web scrapers and automation tools to optimize sales and operations pipelines.
-* Integrating payment gateways and developing custom e-commerce structures.
-* **Project Highlight (Website OdontoVieira)**: Built with Next.js focusing on local SEO ranking and advanced tag conversion tracking via Google Tag Manager (GTM), driving qualified patient leads to the client.
-* **Project Highlight (Batatoom! - Real-time Multiplayer Party Game)**: Real-time vocabulary game built on an event-driven WebSockets architecture (Node.js, Express, Socket.IO). In-memory lexical engine validating 403k+ PT-BR terms in O(1) (<1ms), 100% procedural sound design (Web Audio API - 0 KB audio assets), TV big-screen mode, live typing stream, and zero-config connectivity via Cloudflare Tunnels and QR Code.
+* Integrating payment gateways, conversion funnels, and custom e-commerce structures.
 
 ### **Full Stack Developer & Implementer**
 *AI Atende* | Piedade, Jaboatão, PE (On-site)
@@ -39,6 +37,28 @@ This intersection enables me to go beyond syntax: I apply clinical active listen
 * Designed prompt engineering logic and human-computer interactions for automated customer messaging flows.
 * Administered VPS server instances and orchestrated microservices running inside Docker containers.
 * Customized CRM pipelines (Kommo/AmoCRM) and built real-time messaging integrations to streamline response times and client routing metrics.
+
+---
+
+## Featured Projects
+
+### **Batatoom! — Real-time Multiplayer Word Game**
+* [github.com/Shuralot/Batatoom](https://github.com/Shuralot/Batatoom) | *Stack: Node.js, Express, Socket.IO, WebSockets, Web Audio API, Cloudflare Tunnels*
+* **Problem & Solution**: Real-time multiplayer vocabulary party game connecting players across browsers, smartphones, and large living-room TV displays.
+* **Engineering & Architecture**: Event-driven WebSockets architecture; custom in-memory O(1) lexical engine querying 403k+ terms (<1ms validation via Sets/HashMaps and Unicode NFD normalization); authoritative server-side FSM preventing cheating with live typing streams; 100% procedural audio synthesized via Web Audio API (0 KB audio assets); automated Cloudflare Tunnels and dynamic QR Code for instant zero-config room entry.
+* **Impact**: Ultra-low latency synchronization across heterogeneous devices with zero setup, port-forwarding, or client downloads.
+
+### **Website OdontoVieira — Web Platform & Local SEO**
+* [clinicaodontovieira.com.br](https://www.clinicaodontovieira.com.br) | *Stack: Next.js (App Router), React, Tailwind CSS, Google Tag Manager*
+* **Problem & Solution**: High-performance institutional web application and organic patient acquisition system for a dental clinic.
+* **Engineering & Architecture**: Built with Next.js and Tailwind CSS optimized for Core Web Vitals and local technical SEO; instrumented with Google Tag Manager (GTM) for conversion funnel analytics (CRO) linked directly to WhatsApp appointment booking.
+* **Impact**: Instant page load times, prominent local SEO ranking for regional dental queries, and significant increase in qualified inbound appointments.
+
+### **Ragnar AI-vs-AI Testing Suite — Adversarial Audit Platform**
+* [github.com/Shuralot/TrackTest](https://github.com/Shuralot/TrackTest) | *Stack: Next.js, TypeScript, PostgreSQL, Prisma, Socket.IO, Evolution API, Docker*
+* **Problem & Solution**: Platform to orchestrate, audit, and benchmark adversarial stress testing between conversational AI models via WhatsApp.
+* **Engineering & Architecture**: Full-stack Next.js and TypeScript application backed by PostgreSQL and Prisma ORM; WhatsApp interaction automation via Evolution API; real-time test telemetries and log streaming over Socket.IO; automated vulnerability scoring and token usage analytics.
+* **Impact**: Automated AI agent validation pipeline, identifying prompt injection regressions and safety flaws prior to production releases.
 
 ---
 
