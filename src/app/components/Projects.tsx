@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, X, Monitor, Cpu, MessageSquare, Layout, Bot, Bomb } from "lucide-react";
 import { GithubIcon } from "./Icons";
 import { useLanguage } from "./LanguageContext";
+import TechBadge from "./TechBadge";
 
 type Project = {
   id: string;
@@ -104,12 +105,7 @@ export default function Projects() {
               {/* Tags summary */}
               <div className="flex flex-wrap gap-1.5">
                 {project.tags.slice(0, 3).map((tag, tagIdx) => (
-                  <span
-                    key={tagIdx}
-                    className="text-[10px] font-medium px-2.5 py-0.5 rounded-full bg-foreground/[0.02] dark:bg-foreground/[0.04] border border-border/60 text-muted"
-                  >
-                    {tag}
-                  </span>
+                  <TechBadge key={tagIdx} name={tag} size="sm" />
                 ))}
                 {project.tags.length > 3 && (
                   <span className="text-[10px] font-medium text-accent pl-1 self-center">
@@ -152,38 +148,61 @@ export default function Projects() {
 
                   <div>
                     {/* Header */}
-                    <div className="flex items-center gap-4 mb-5 sm:mb-6 pr-8">
-                      <div className="p-2.5 sm:p-3 rounded-xl bg-accent-muted text-accent">
+                    <div className="flex items-start gap-4 mb-4 sm:mb-5 pr-8">
+                      <div className="p-2.5 sm:p-3 rounded-xl bg-accent-muted text-accent shrink-0 mt-0.5">
                         {selectedProject.icon}
                       </div>
-                      <div>
-                        <span className="text-[10px] font-bold uppercase tracking-widest text-accent">
+                      <div className="flex-1 min-w-0">
+                        <span className="text-[10px] font-bold uppercase tracking-widest text-accent block mb-1">
                           {selectedProject.category}
                         </span>
-                        <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground leading-none mt-1">
+                        <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground leading-tight">
                           {selectedProject.title}
                         </h3>
                       </div>
                     </div>
+
+                    {/* Quick Access Action Bar at TOP (Immediately visible without scrolling) */}
+                    {(selectedProject.github || selectedProject.link) && (
+                      <div className="flex flex-wrap items-center gap-2.5 mb-6 pb-5 border-b border-border/70">
+                        {selectedProject.github && (
+                          <a
+                            href={selectedProject.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex h-9 items-center gap-2 px-4 rounded-xl bg-foreground text-background hover:opacity-90 text-xs font-semibold shadow-sm transition-all cursor-pointer"
+                          >
+                            <GithubIcon size={14} />
+                            {t("projects.codeBtn")}
+                          </a>
+                        )}
+                        {selectedProject.link && (
+                          <a
+                            href={selectedProject.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex h-9 items-center gap-2 px-4 rounded-xl border border-border bg-card-bg hover:bg-foreground/[0.04] text-xs font-semibold text-foreground transition-colors cursor-pointer"
+                          >
+                            <ExternalLink size={14} />
+                            {t("projects.siteBtn")}
+                          </a>
+                        )}
+                      </div>
+                    )}
 
                     {/* Detailed description */}
                     <p className="text-xs sm:text-sm text-muted leading-relaxed font-normal mb-6 sm:mb-8 whitespace-pre-line">
                       {selectedProject.description}
                     </p>
 
-                    {/* Tags list */}
+                    {/* Tags list with official logos */}
                     <div className="mb-6 sm:mb-8">
                       <h4 className="text-[10px] font-bold uppercase tracking-wider text-foreground opacity-60 mb-3">
                         {t("projects.techHeader")}
                       </h4>
-                      <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                      <div className="flex flex-wrap gap-2">
                         {selectedProject.tags.map((tag, idx) => (
-                          <span
-                            key={idx}
-                            className="text-xs px-2.5 py-1 rounded-lg bg-foreground/[0.02] dark:bg-foreground/[0.04] border border-border/80 text-muted"
-                          >
-                            {tag}
-                          </span>
+                          <TechBadge key={idx} name={tag} size="md" />
                         ))}
                       </div>
                     </div>

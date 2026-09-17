@@ -30,6 +30,7 @@ Essa intersecção me permite ir além das linhas de código: aplico escuta ativ
 * Criação de robôs de web scraping (extração de dados) para automação de processos comerciais.
 * Integração de gateways de pagamento e plataformas de e-commerce personalizadas.
 * **Caso de Destaque (Website OdontoVieira)**: Desenvolvido em Next.js com foco em SEO local de alto impacto e rastreamento avançado de conversão via Google Tag Manager (GTM), gerando aumento direto na aquisição de novos leads qualificados de pacientes.
+* **Caso de Destaque (Batatoom! - Party Game Multiplayer)**: Party game em tempo real com arquitetura orientada a eventos sobre WebSockets (Node.js, Express, Socket.IO). Motor léxico em memória de +403.000 palavras em O(1) (<1ms de consulta), áudio 100% procedural (Web Audio API - zero dependências de arquivos de áudio), suporte a Modo TV, digitação ao vivo (live typing) e conexão zero-config via túneis Cloudflare e QR Code.
 
 ### **Desenvolvedor Full Stack & Implementador**
 *AI Atende* | Piedade, Jaboatão, PE (Presencial)

@@ -30,6 +30,7 @@ This intersection enables me to go beyond syntax: I apply clinical active listen
 * Creating tailored web scrapers and automation tools to optimize sales and operations pipelines.
 * Integrating payment gateways and developing custom e-commerce structures.
 * **Project Highlight (Website OdontoVieira)**: Built with Next.js focusing on local SEO ranking and advanced tag conversion tracking via Google Tag Manager (GTM), driving qualified patient leads to the client.
+* **Project Highlight (Batatoom! - Real-time Multiplayer Party Game)**: Real-time vocabulary game built on an event-driven WebSockets architecture (Node.js, Express, Socket.IO). In-memory lexical engine validating 403k+ PT-BR terms in O(1) (<1ms), 100% procedural sound design (Web Audio API - 0 KB audio assets), TV big-screen mode, live typing stream, and zero-config connectivity via Cloudflare Tunnels and QR Code.
 
 ### **Full Stack Developer & Implementer**
 *AI Atende* | Piedade, Jaboatão, PE (On-site)
